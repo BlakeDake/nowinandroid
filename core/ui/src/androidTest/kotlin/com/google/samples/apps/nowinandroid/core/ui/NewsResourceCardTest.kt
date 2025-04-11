@@ -52,6 +52,7 @@ class NewsResourceCardTest {
         composeTestRule
             .onNodeWithText(
                 composeTestRule.activity.getString(
+                    //R.string.card_meta_data_text,
                     R.string.core_ui_card_meta_data_text,
                     dateFormatted,
                     newsWithKnownResourceType.type,
@@ -123,6 +124,7 @@ class NewsResourceCardTest {
         composeTestRule
             .onNodeWithContentDescription(
                 composeTestRule.activity.getString(
+                    //R.string.unread_resource_dot_content_description,
                     R.string.core_ui_unread_resource_dot_content_description,
                 ),
             )
@@ -147,6 +149,7 @@ class NewsResourceCardTest {
         composeTestRule
             .onNodeWithContentDescription(
                 composeTestRule.activity.getString(
+                    //R.string.unread_resource_dot_content_description,
                     R.string.core_ui_unread_resource_dot_content_description,
                 ),
             )
