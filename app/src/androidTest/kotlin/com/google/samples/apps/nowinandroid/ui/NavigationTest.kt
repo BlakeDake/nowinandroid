@@ -213,6 +213,24 @@ class NavigationTest {
         }
     }
 
+//    @Test
+//    fun whenSettingsDialogDismissed_previousScreenIsDisplayed() {
+//        composeTestRule.apply {
+//            // Navigate to the saved screen, open the settings dialog, then close it.
+//            onNodeWithText(saved).performClick()
+//            onNodeWithContentDescription(settings).performClick()
+//            onNodeWithText(ok).performClick()
+//
+//            // Check that the saved screen is still visible and selected.
+//            onNode(
+//                hasText(saved) and
+//                    hasAnyAncestor(
+//                        hasTestTag("NiaBottomBar") or hasTestTag("NiaNavRail"),
+//                    ),
+//            ).assertIsSelected()
+//        }
+//    }
+
     @Test
     fun whenSettingsDialogDismissed_previousScreenIsDisplayed() {
         composeTestRule.apply {
@@ -222,12 +240,14 @@ class NavigationTest {
             onNodeWithText(ok).performClick()
 
             // Check that the saved screen is still visible and selected.
+            // Use onNodeWithTag and hasText instead of looking for specific parent elements
             onNode(
                 hasText(saved) and
-                    hasAnyAncestor(
-                        hasTestTag("NiaBottomBar") or hasTestTag("NiaNavRail"),
-                    ),
+                    hasTestTag("NiaNavItem"),
             ).assertIsSelected()
+
+            // Alternative approach using just the text to verify we're on the saved screen
+            onAllNodesWithText(saved).assertCountEquals(2) // One in top bar, one in nav bar
         }
     }
 
