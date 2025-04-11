@@ -67,11 +67,30 @@ class SearchScreenTest {
         useDynamicColor = false,
     )
 
+//    @Before
+//    fun setup() {
+//        composeTestRule.activity.apply {
+//            clearSearchContentDesc = getString(R.string.clear_search_text_content_desc)
+//            clearRecentSearchesContentDesc = getString(R.string.clear_recent_searches_content_desc)
+//            followButtonContentDesc =
+//                getString(interestsR.string.card_follow_button_content_desc)
+//            unfollowButtonContentDesc =
+//                getString(interestsR.string.card_unfollow_button_content_desc)
+//            topicsString = getString(R.string.topics)
+//            updatesString = getString(R.string.updates)
+//            tryAnotherSearchString = getString(R.string.try_another_search) +
+//                " " + getString(R.string.interests) + " " + getString(R.string.to_browse_topics)
+//            searchNotReadyString = getString(R.string.search_not_ready)
+//        }
+//    }
+
     @Before
     fun setup() {
         composeTestRule.activity.apply {
-            clearSearchContentDesc = getString(R.string.feature_search_clear_search_text_content_desc)
-            clearRecentSearchesContentDesc = getString(R.string.feature_search_clear_recent_searches_content_desc)
+            clearSearchContentDesc =
+                getString(R.string.feature_search_clear_search_text_content_desc)
+            clearRecentSearchesContentDesc =
+                getString(R.string.feature_search_clear_recent_searches_content_desc)
             followButtonContentDesc =
                 getString(string.core_ui_interests_card_follow_button_content_desc)
             unfollowButtonContentDesc =
